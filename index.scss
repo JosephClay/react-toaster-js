@@ -1,0 +1,83 @@
+$zindex-toaster: 9999 !default;
+$brand-danger: #cc0000 !default;
+$brand-warning: #cc9933 !default;
+$brand-info: #49afcd !default;
+$brand-success: #33cc33 !default;
+
+@mixin ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.react-toaster {
+    position: fixed;
+    z-index: $zindex-toaster;
+
+    // different mounting areas
+    &[data-mounting="top-right"] {
+        top: 12px;
+        right: 12px;
+        .react-toast { transform: translateX(110%) rotate(20deg); }
+    }
+    &[data-mounting="top-left"] {
+        top: 12px;
+        left: 12px;
+        .react-toast { transform: translateX(-110%) rotate(-20deg); }
+    }
+    &[data-mounting="bottom-right"] {
+        bottom: 12px;
+        right: 12px;
+        .react-toast { transform: translateX(110%) rotate(20deg); }
+    }
+    &[data-mounting="bottom-left"] {
+        bottom: 12px;
+        left: 12px;
+        .react-toast { transform: translateX(-110%) rotate(-20deg); }
+    }
+    &[data-mounting] {
+        .react-toast.active { transform: translateX(0) rotate(0); }
+    }
+}
+    .react-toast {
+        position: relative;
+        width: 275px;
+        margin: 0 0 20px 0;
+        padding: 10px 20px 10px 30px;
+        border-radius: 2px;
+        overflow: hidden;
+        cursor: default;
+        background: #fff;
+
+        transition: opacity 500ms ease,
+            transform 300ms cubic-bezier(.02, .01, .47, 1);
+
+        will-change: opacity, transform;
+
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 5px;
+            border-radius: 2px 0 0 2px;
+            background: #fff;
+        }
+
+        &[data-type="success"] { &:before { background: $brand-success; } }
+        &[data-type="danger"] { &:before { background: $brand-danger; } }
+        &[data-type="info"] { &:before { background: $brand-info; } }
+        &[data-type="warning"] { &:before { background: $brand-warning; } }
+
+        &.fade { opacity: 0.6; }
+        &.dismissible { cursor: pointer; }
+    }
+        .react-toast-title {
+            font-weight: bold;
+            @include ellipsis();
+        }
+        .react-toast-message { font-size: 0.8rem; }
+
+

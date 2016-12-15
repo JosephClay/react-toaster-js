@@ -1,0 +1,88 @@
+.react-toaster {
+  position: fixed;
+  z-index: 9999;
+}
+.react-toaster[data-mounting="top-right"] {
+  top: 12px;
+  right: 12px;
+}
+.react-toaster[data-mounting="top-right"] .react-toast {
+  transform: translateX(110%) rotate(20deg);
+}
+.react-toaster[data-mounting="top-left"] {
+  top: 12px;
+  left: 12px;
+}
+.react-toaster[data-mounting="top-left"] .react-toast {
+  transform: translateX(-110%) rotate(-20deg);
+}
+.react-toaster[data-mounting="bottom-right"] {
+  bottom: 12px;
+  right: 12px;
+}
+.react-toaster[data-mounting="bottom-right"] .react-toast {
+  transform: translateX(110%) rotate(20deg);
+}
+.react-toaster[data-mounting="bottom-left"] {
+  bottom: 12px;
+  left: 12px;
+}
+.react-toaster[data-mounting="bottom-left"] .react-toast {
+  transform: translateX(-110%) rotate(-20deg);
+}
+.react-toaster[data-mounting] .react-toast.active {
+  transform: translateX(0) rotate(0);
+}
+
+.react-toast {
+  position: relative;
+  width: 275px;
+  margin: 0 0 20px 0;
+  padding: 10px 20px 10px 30px;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: default;
+  background: #fff;
+  transition: opacity 500ms ease, transform 300ms cubic-bezier(0.02, 0.01, 0.47, 1);
+  will-change: opacity, transform;
+}
+.react-toast:before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  border-radius: 2px 0 0 2px;
+  background: #fff;
+}
+.react-toast[data-type="success"]:before {
+  background: #33cc33;
+}
+.react-toast[data-type="danger"]:before {
+  background: #cc0000;
+}
+.react-toast[data-type="info"]:before {
+  background: #49afcd;
+}
+.react-toast[data-type="warning"]:before {
+  background: #cc9933;
+}
+.react-toast.fade {
+  opacity: 0.6;
+}
+.react-toast.dismissible {
+  cursor: pointer;
+}
+
+.react-toast-title {
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.react-toast-message {
+  font-size: 0.8rem;
+}

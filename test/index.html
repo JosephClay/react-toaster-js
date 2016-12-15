@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>React Toaster</title>
+        <link rel="stylesheet" href="/index.css">
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+                .list {
+                    width: 150px;
+                    padding: 50px;
+                }
+                    button {
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+            .react-toast {
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mount"></div>
+
+        <div class="list">
+            <p>Toasts</p>
+            <button class="btn" data-standard>
+                standard
+            </button>
+            <button class="btn" data-no-title>
+                no title
+            </button>
+            <button class="btn" data-no-message>
+                no message
+            </button>
+
+            <p>Types</p>
+            <button class="btn" data-success>
+                success
+            </button>
+            <button class="btn" data-error>
+                error
+            </button>
+            <button class="btn" data-info>
+                info
+            </button>
+            <button class="btn" data-warning>
+                warning
+            </button>
+
+            <p>Settings</p>
+            <button class="btn" data-not-dismissible>
+                not dismissible
+            </button>
+            <button class="btn" data-persist>
+                persist
+            </button>
+            <button class="btn" data-no-fade>
+                no fade
+            </button>
+
+            <p>Positioning</p>
+            <button class="btn" data-top-right>
+                top right
+            </button>
+            <button class="btn" data-top-left>
+                top left
+            </button>
+            <button class="btn" data-bottom-right>
+                bottom right
+            </button>
+            <button class="btn" data-bottom-left>
+                bottom left
+            </button>
+
+            <p>Operations</p>
+            <button class="btn" data-remove>
+                remove
+            </button>
+        </div>
+
+        <script src="/bin/test.js"></script>
+    </body>
+</html>
